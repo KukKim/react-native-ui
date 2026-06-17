@@ -1,14 +1,22 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply, CommonText } from '@kukkim/react-native-ui';
-
-const result = multiply(3, 7);
+import { View, StyleSheet } from 'react-native';
+import {
+  CommonBadge,
+  CommonButton,
+  CommonText,
+  ThemeProvider,
+} from '@kukkim/react-native-ui';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <CommonText>Test text</CommonText>
-      <Text>Result: {result}</Text>
-    </View>
+    <ThemeProvider>
+      <View style={styles.container}>
+        <CommonBadge typeText="1" size={'s'} />
+        <CommonBadge type="secondary" typeText="2" size={'m'} />
+        <CommonBadge typeText="3" size={'l'} />
+        <CommonText>Test text</CommonText>
+        <CommonButton title={'test button'} />
+      </View>
+    </ThemeProvider>
   );
 }
 

@@ -4,23 +4,19 @@ ui library for react native
 
 ## Installation
 
-
 ```sh
 npm install @kukkim/react-native-ui
 ```
 
-
 ## Usage
 
-
 ```js
-import { multiply } from '@kukkim/react-native-ui';
+import { } from '@kukkim/react-native-ui';
 
 // ...
 
-const result = multiply(3, 7);
+const ...
 ```
-
 
 ## Contributing
 
