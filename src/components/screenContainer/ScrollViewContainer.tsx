@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, type ViewProps } from 'react-native';
 import SafeAreaContainer from './SafeAreaContainer';
 
+//TODO : SafeAreaContainer가 적용되지 않음.
 const ScrollViewContainer = ({ children }: ViewProps) => {
   return (
     <SafeAreaContainer>
