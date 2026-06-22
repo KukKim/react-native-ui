@@ -13,6 +13,8 @@ import {
   CommonHeader,
   CommonCard,
   FoldableCard,
+  LinearProgressBar,
+  CircularProgressBar,
 } from '@kukkim/react-native-ui';
 import { useState } from 'react';
 
@@ -76,6 +78,8 @@ export default function App() {
         >
           <CommonText size={'s'}>Card Content</CommonText>
         </FoldableCard>
+        <LinearProgressBar value={0.3} />
+        <CircularProgressBar value={0.7} size="l" />
       </ScrollViewContainer>
     </ThemeProvider>
   );

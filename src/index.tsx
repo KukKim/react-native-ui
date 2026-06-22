@@ -12,5 +12,7 @@ export {
   CommonHeader,
   CommonCard,
   FoldableCard,
+  LinearProgressBar,
+  CircularProgressBar,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';

@@ -8,6 +8,7 @@ import { useTheme } from '../../hooks/useTheme';
 //   LinearTransition,
 // } from 'react-native-reanimated';
 
+//TODO: React-native-reanimated 적용시키기
 // const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const FoldableCard = ({
   children,
