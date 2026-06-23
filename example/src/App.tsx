@@ -15,6 +15,9 @@ import {
   FoldableCard,
   LinearProgressBar,
   CircularProgressBar,
+  CommonInput,
+  CommonPopOver,
+  CommonSwitch,
 } from '@kukkim/react-native-ui';
 import { useState } from 'react';
 
@@ -22,6 +25,10 @@ export default function App() {
   const [ratingValue, setRatingValue] = useState(0);
   const [checkBoxValue, setCheckBoxValue] = useState(false);
   const [cardOpen, setCardOpen] = useState(false);
+  const [text, setText] = useState('');
+  const [visible, setVisible] = useState(false);
+  const [switchValue, setSwitchValue] = useState(false);
+
   return (
     <ThemeProvider>
       <ScrollViewContainer>
@@ -80,6 +87,17 @@ export default function App() {
         </FoldableCard>
         <LinearProgressBar value={0.3} />
         <CircularProgressBar value={0.7} size="l" />
+        <CommonInput title={'TextInput'} value={text} onChangeText={setText} />
+        <CommonButton
+          title={'Show Pop Over'}
+          onPress={() => setVisible(!visible)}
+        />
+        <CommonPopOver
+          type="secondary"
+          visible={visible}
+          content={'This is pop over'}
+        />
+        <CommonSwitch value={switchValue} onChange={setSwitchValue} />
       </ScrollViewContainer>
     </ThemeProvider>
   );

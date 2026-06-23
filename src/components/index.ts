@@ -10,3 +10,6 @@ export { CheckBox } from './checkBox';
 export { CommonHeader } from './header';
 export { CommonCard, FoldableCard } from './card';
 export { LinearProgressBar, CircularProgressBar } from './progressBar';
+export { CommonInput } from './input';
+export { CommonPopOver } from './popOver';
+export { CommonSwitch } from './switch';
