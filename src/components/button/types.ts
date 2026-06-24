@@ -27,3 +27,7 @@ export interface ButtonProps extends PressableProps {
 export interface CommonButtonProps extends ButtonProps {
   title?: string;
 }
+
+export interface SocialLoginButtonProps extends ButtonProps {
+  provider: 'apple' | 'facebook' | 'google' | 'kakaotalk' | 'naver';
+}

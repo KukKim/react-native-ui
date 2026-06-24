@@ -7,6 +7,12 @@ import StarHalf from './StarHalf';
 import StarFull from './StarFull';
 import Check from './Check';
 import X from './X';
+import LoaderCircle from './LoaderCircle';
+import Apple from './Apple';
+import Facebook from './Facebook';
+import Google from './Google';
+import Kakaotalk from './Kakaotalk';
+import Naver from './Naver';
 // import { ArrowDownToLine } from './ArrowDownToLine';
 // import { ArrowDownWideNarrow } from './ArrowDownWideNarrow';
 // import { ChevronDown } from './ChevronDown';
@@ -20,6 +26,12 @@ const iconMap = {
   star_full: StarFull,
   check: Check,
   close: X,
+  loaderCircle: LoaderCircle,
+  apple: Apple,
+  facebook: Facebook,
+  google: Google,
+  kakaotalk: Kakaotalk,
+  naver: Naver,
 } as const;
 
 export const CommonIcon = ({

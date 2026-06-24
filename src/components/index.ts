@@ -13,3 +13,4 @@ export { LinearProgressBar, CircularProgressBar } from './progressBar';
 export { CommonInput } from './input';
 export { CommonPopOver } from './popOver';
 export { CommonSwitch } from './switch';
+export { CommonSpinner } from './spinner';

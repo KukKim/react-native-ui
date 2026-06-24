@@ -1,33 +1,35 @@
 import { StyleSheet, View } from 'react-native';
 import { CommonText } from '../text';
-import { type CommonBadgeProps, fontSizeType, sizeType } from './types';
+import {
+  type NumberBadgeProps,
+  expandedSizeType,
+  fontSizeType,
+  sizeType,
+} from './types';
 import { useTheme } from '../../hooks/useTheme';
 
-const CommonBadge = ({
+const NumberBadge = ({
   type = 'primary',
+  number,
+  maxNumber,
   size = 'm',
-  typeText,
   style,
   ...props
-}: CommonBadgeProps) => {
+}: NumberBadgeProps) => {
   const { theme } = useTheme();
+  const isExpanded = maxNumber !== undefined && number > maxNumber;
   return (
     <View style={[styles.wrapper, style]} {...props}>
       <View
         style={[
           styles.badge,
-          sizeType[size],
+          isExpanded ? expandedSizeType[size] : sizeType[size],
           { backgroundColor: theme.colors[type] },
         ]}
-        {...props}
       >
-        {typeText && (
-          <CommonText
-            style={[fontSizeType[size], { color: theme.colors.white }]}
-          >
-            {typeText}
-          </CommonText>
-        )}
+        <CommonText style={[fontSizeType[size], { color: theme.colors.white }]}>
+          {isExpanded ? `${maxNumber}+` : number}
+        </CommonText>
       </View>
     </View>
   );
@@ -44,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CommonBadge;
+export default NumberBadge;
