@@ -18,6 +18,8 @@ import {
   CommonInput,
   CommonPopOver,
   CommonSwitch,
+  CommonSpinner,
+  SocialLoginButton,
 } from '@kukkim/react-native-ui';
 import { useState } from 'react';
 
@@ -98,6 +100,8 @@ export default function App() {
           content={'This is pop over'}
         />
         <CommonSwitch value={switchValue} onChange={setSwitchValue} />
+        <SocialLoginButton provider="apple" />
+        <CommonSpinner />
       </ScrollViewContainer>
     </ThemeProvider>
   );

@@ -9,8 +9,10 @@ import Animated, {
 } from 'react-native-reanimated';
 import { CommonIcon } from '../icon';
 import { type SpinnerProps } from './types';
+import { useTheme } from '../../hooks/useTheme';
 
-const CommonSpinner = ({ ...props }: SpinnerProps) => {
+const CommonSpinner = ({ type = 'primary', ...props }: SpinnerProps) => {
+  const { theme } = useTheme();
   const rotateValue = useSharedValue(0);
   const animatedStyles = useAnimatedStyle(() => ({
     transform: [{ rotate: `${rotateValue.value}deg` }],
@@ -30,7 +32,7 @@ const CommonSpinner = ({ ...props }: SpinnerProps) => {
   return (
     <View style={styles.container} {...props}>
       <Animated.View style={[animatedStyles]}>
-        <CommonIcon iconType="loaderCircle" />
+        <CommonIcon color={theme.colors[type]} iconType="loaderCircle" />
       </Animated.View>
     </View>
   );

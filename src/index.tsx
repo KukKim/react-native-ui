@@ -17,5 +17,7 @@ export {
   CommonInput,
   CommonPopOver,
   CommonSwitch,
+  SocialLoginButton,
+  CommonSpinner,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';

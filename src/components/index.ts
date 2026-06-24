@@ -1,5 +1,5 @@
 export { CommonText } from './text';
-export { CommonButton } from './button';
+export { CommonButton, SocialLoginButton } from './button';
 export { CommonBadge } from './badge';
 export { SafeAreaContainer, ScrollViewContainer } from './screenContainer';
 export { CommonIcon } from './icon';
