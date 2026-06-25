@@ -15,6 +15,7 @@ export interface IconProps extends ViewProps {
     // | 'spinner'
     | 'check'
     | 'back'
+    | 'down'
     | 'close'
     | 'apple'
     | 'facebook'

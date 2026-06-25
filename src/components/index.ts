@@ -14,3 +14,5 @@ export { CommonInput } from './input';
 export { CommonPopOver } from './popOver';
 export { CommonSwitch } from './switch';
 export { CommonSpinner } from './spinner';
+export { CommonSlider } from './slider';
+export { CommonSelect, SelectItem } from './select';

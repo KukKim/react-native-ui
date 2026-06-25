@@ -19,5 +19,8 @@ export {
   CommonSwitch,
   SocialLoginButton,
   CommonSpinner,
+  CommonSlider,
+  CommonSelect,
+  SelectItem,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';

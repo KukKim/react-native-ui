@@ -15,7 +15,7 @@ import Kakaotalk from './Kakaotalk';
 import Naver from './Naver';
 // import { ArrowDownToLine } from './ArrowDownToLine';
 // import { ArrowDownWideNarrow } from './ArrowDownWideNarrow';
-// import { ChevronDown } from './ChevronDown';
+import ChevronDown from './ChevronDown';
 // import { RotateCw } from './RotateCw';
 // export { SquareArrowOutUpRight } from './SquareArrowOutUpRight';
 
@@ -32,6 +32,7 @@ const iconMap = {
   google: Google,
   kakaotalk: Kakaotalk,
   naver: Naver,
+  down: ChevronDown,
 } as const;
 
 export const CommonIcon = ({

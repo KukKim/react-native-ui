@@ -2,14 +2,14 @@ import { StyleSheet, View, Pressable } from 'react-native';
 import { CommonText } from '../text';
 import { type FoldableCardProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
-// import Animated, {
-//   FadeIn,
-//   FadeOut,
-//   LinearTransition,
-// } from 'react-native-reanimated';
+import Animated, {
+  FadeIn,
+  FadeOut,
+  LinearTransition,
+} from 'react-native-reanimated';
 
-//TODO: React-native-reanimated 적용시키기
-// const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+//TODO: Animation이 여전히 부자연스러우니 수정필요.
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const FoldableCard = ({
   children,
   type = 'primary',
@@ -20,8 +20,7 @@ const FoldableCard = ({
   const { theme } = useTheme();
   return (
     <View style={styles.container}>
-      <Pressable
-        // <AnimatedPressable
+      <AnimatedPressable
         style={[
           styles.titleContainer,
           {
@@ -29,7 +28,7 @@ const FoldableCard = ({
           },
         ]}
         onPress={onPress}
-        // layout={LinearTransition.duration(200)}
+        layout={LinearTransition.duration(200)}
       >
         <CommonText
           style={[
@@ -41,13 +40,11 @@ const FoldableCard = ({
         >
           {title}
         </CommonText>
-        {/* </AnimatedPressable> */}
-      </Pressable>
+      </AnimatedPressable>
       {value && (
-        <View
-          // <Animated.View
-          // entering={FadeIn}
-          // exiting={FadeOut}
+        <Animated.View
+          entering={FadeIn}
+          exiting={FadeOut}
           style={[
             styles.contentContainer,
             {
@@ -56,8 +53,7 @@ const FoldableCard = ({
           ]}
         >
           {children}
-          {/* </Animated.View> */}
-        </View>
+        </Animated.View>
       )}
     </View>
   );
