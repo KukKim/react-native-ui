@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
+import Animated, {
+  useAnimatedProps,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
 import { type ProgressBarProps, sizeType, strokeWidthType } from './types';
 import { useTheme } from '../../hooks/useTheme';
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const CircularProgressBar = ({
   type = 'primary',
@@ -20,7 +28,19 @@ const CircularProgressBar = ({
   const radius = (svgSize - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
 
-  const strokeDashoffset = circumference * (1 - progress);
+  const animatedProgress = useSharedValue(0);
+
+  useEffect(() => {
+    animatedProgress.value = withTiming(progress, {
+      duration: 500,
+    });
+  }, [progress, animatedProgress]);
+
+  const animatedProps = useAnimatedProps(() => {
+    return {
+      strokeDashoffset: circumference * (1 - animatedProgress.value),
+    };
+  });
 
   return (
     <View style={[styles.container, style]} {...props}>
@@ -38,7 +58,7 @@ const CircularProgressBar = ({
           fill="none"
         />
 
-        <Circle
+        <AnimatedCircle
           cx={svgSize / 2}
           cy={svgSize / 2}
           r={radius}
@@ -47,7 +67,7 @@ const CircularProgressBar = ({
           fill="none"
           strokeLinecap="round"
           strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
+          animatedProps={animatedProps}
           rotation="-90"
           originX={svgSize / 2}
           originY={svgSize / 2}

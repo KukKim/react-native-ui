@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react';
-import { Animated, Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { type SwitchProps, sizeType } from './types';
 import { useTheme } from '../../hooks/useTheme';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 
-//TODO: react-native-reanimated로 수정필요
 export default function CommonSwitch({
   type = 'primary',
   size = 'm',
@@ -14,20 +16,22 @@ export default function CommonSwitch({
 }: SwitchProps) {
   const { theme } = useTheme();
 
-  const animValue = useRef(new Animated.Value(value ? 1 : 0)).current;
-
   const sizeValue = sizeType[size];
   const containerWidth = (sizeValue + 2) * 2;
   const thumbSize = sizeValue;
   const translateX = containerWidth - thumbSize - 2;
 
-  useEffect(() => {
-    Animated.timing(animValue, {
-      toValue: value ? translateX : 0,
-      duration: 200,
-      useNativeDriver: true,
-    }).start();
-  }, [value, translateX, animValue]);
+  const thumbAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateX: withTiming(value ? translateX : 0, {
+            duration: 200,
+          }),
+        },
+      ],
+    };
+  }, [value, translateX]);
 
   const toggleValue = () => {
     if (disabled) return;
@@ -57,8 +61,8 @@ export default function CommonSwitch({
             height: thumbSize,
             borderRadius: thumbSize / 2,
             backgroundColor: value ? theme.colors[type] : theme.colors.disabled,
-            transform: [{ translateX: animValue }],
           },
+          thumbAnimatedStyle,
         ]}
       />
     </Pressable>

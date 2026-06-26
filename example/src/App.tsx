@@ -23,6 +23,7 @@ import {
   CommonSlider,
   CommonSelect,
   SelectItem,
+  NumberBadge,
 } from '@kukkim/react-native-ui';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useState } from 'react';
@@ -56,6 +57,9 @@ export default function App() {
             <CommonBadge typeText="1" size={'s'} />
             <CommonBadge type="secondary" typeText="2" size={'m'} />
             <CommonBadge typeText="3" size={'l'} />
+            <NumberBadge number={1} size={'s'} />
+            <NumberBadge type="secondary" number={10} size={'m'} />
+            <NumberBadge number={100} maxNumber={99} size={'l'} />
             <CommonText>Test text</CommonText>
             <CommonButton title={'test button'} />
             <CommonIcon iconType="star_full" size="s" />
@@ -97,7 +101,7 @@ export default function App() {
           >
             <CommonText size={'s'}>Card Content</CommonText>
           </FoldableCard>
-          <LinearProgressBar value={0.3} />
+          <LinearProgressBar value={0.2} />
           <CircularProgressBar value={0.7} size="l" />
           <CommonInput
             title={'TextInput'}

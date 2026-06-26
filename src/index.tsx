@@ -22,5 +22,6 @@ export {
   CommonSlider,
   CommonSelect,
   SelectItem,
+  NumberBadge,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';

@@ -1,4 +1,9 @@
-import { StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 import { type ProgressBarProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
 
@@ -11,6 +16,18 @@ const LinearProgressBar = ({
   const { theme } = useTheme();
   const progress = Math.min(Math.max(value, 0), 1);
 
+  const [containerWidth, setContainerWidth] = useState(0);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    width: withTiming(containerWidth * progress, {
+      duration: 1000,
+    }),
+  }));
+
+  const onLayout = (e: LayoutChangeEvent) => {
+    setContainerWidth(e.nativeEvent.layout.width);
+  };
+
   return (
     <View
       style={[
@@ -20,17 +37,21 @@ const LinearProgressBar = ({
         },
         style,
       ]}
+      onLayout={onLayout}
       {...props}
     >
-      <View
-        style={[
-          styles.progress,
-          {
-            width: `${progress * 100}%`,
-            backgroundColor: theme.colors[type],
-          },
-        ]}
-      />
+      {containerWidth > 0 && (
+        <Animated.View
+          style={[
+            styles.progress,
+            {
+              width: containerWidth,
+              backgroundColor: theme.colors[type],
+            },
+            animatedStyle,
+          ]}
+        />
+      )}
     </View>
   );
 };

@@ -1,6 +1,6 @@
 export { CommonText } from './text';
 export { CommonButton, SocialLoginButton } from './button';
-export { CommonBadge } from './badge';
+export { CommonBadge, NumberBadge } from './badge';
 export { SafeAreaContainer, ScrollViewContainer } from './screenContainer';
 export { CommonIcon } from './icon';
 export { CommonRating } from './rating';
