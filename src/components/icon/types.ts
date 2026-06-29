@@ -10,9 +10,8 @@ export const sizeType: Record<SizeVariant, number> = {
 };
 
 export interface IconProps extends ViewProps {
-  iconType: // | 'setting'
-    // | 'search'
-    // | 'spinner'
+  iconType:
+    | 'search'
     | 'check'
     | 'back'
     | 'down'
@@ -23,11 +22,32 @@ export interface IconProps extends ViewProps {
     | 'kakaotalk'
     | 'naver'
     | 'loaderCircle'
-    // | 'close'
-    // | 'tune'
     | 'star_empty'
     | 'star_half'
-    | 'star_full';
+    | 'star_full'
+    | 'bookmark'
+    | 'calendar'
+    | 'download'
+    | 'ellipsis'
+    | 'heart'
+    | 'house'
+    | 'image'
+    | 'info'
+    | 'link'
+    | 'mapPin'
+    | 'maximize'
+    | 'menu'
+    | 'minimize'
+    | 'pencil'
+    | 'play'
+    | 'plus'
+    | 'search'
+    | 'settings'
+    | 'share'
+    | 'trash'
+    | 'unplug'
+    | 'user'
+    | 'tune';
   type?: Variant;
   size?: SizeVariant;
   color?: string;

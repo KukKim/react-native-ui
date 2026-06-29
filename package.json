@@ -39,7 +39,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "test": "jest",
     "release": "release-it --only-version",
-    "icons:build": "svgr --native --typescript --out-dir src/components/icon src/assets/icons"
+    "icons:build": "svgr --native --typescript --out-dir src/components/icon/icon src/assets/icons"
   },
   "keywords": [
     "react-native",

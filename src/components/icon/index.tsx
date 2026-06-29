@@ -13,11 +13,34 @@ import Facebook from './Facebook';
 import Google from './Google';
 import Kakaotalk from './Kakaotalk';
 import Naver from './Naver';
+import ChevronDown from './ChevronDown';
 // import { ArrowDownToLine } from './ArrowDownToLine';
 // import { ArrowDownWideNarrow } from './ArrowDownWideNarrow';
-import ChevronDown from './ChevronDown';
 // import { RotateCw } from './RotateCw';
 // export { SquareArrowOutUpRight } from './SquareArrowOutUpRight';
+import Bookmark from './Bookmark';
+import Calendar from './Calendar';
+import Download from './Download';
+import Ellipsis from './Ellipsis';
+import Heart from './Heart';
+import House from './House';
+import Image from './Image';
+import Info from './Info';
+import Link from './Link';
+import MapPin from './MapPin';
+import Maximize from './Maximize';
+import Menu from './Menu';
+import Minimize from './Minimize';
+import Pencil from './Pencil';
+import Play from './Play';
+import Plus from './Plus';
+import Search from './Search';
+import Settings from './Settings';
+import Share from './Share2';
+import Trash from './Trash2';
+import Unplug from './Unplug';
+import User from './User';
+import Tune from './Tune';
 
 const iconMap = {
   back: ArrowLeft,
@@ -33,8 +56,32 @@ const iconMap = {
   kakaotalk: Kakaotalk,
   naver: Naver,
   down: ChevronDown,
+  bookmark: Bookmark,
+  calendar: Calendar,
+  download: Download,
+  ellipsis: Ellipsis,
+  heart: Heart,
+  house: House,
+  image: Image,
+  info: Info,
+  link: Link,
+  mapPin: MapPin,
+  maximize: Maximize,
+  menu: Menu,
+  minimize: Minimize,
+  pencil: Pencil,
+  play: Play,
+  plus: Plus,
+  search: Search,
+  settings: Settings,
+  share: Share,
+  trash: Trash,
+  unplug: Unplug,
+  user: User,
+  tune: Tune,
 } as const;
 
+// TODO: 여기에 없는 아이콘을 추가해야할때에 대한 솔루션 필요? 필요한 아이콘이 생길때마다 새로 추가해야하나?
 export const CommonIcon = ({
   iconType,
   size = 'm',
