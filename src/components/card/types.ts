@@ -14,5 +14,5 @@ export interface FoldableCardProps extends CardProps {
   title: string;
   titleStyle?: ViewStyle;
   value: boolean;
-  onPress?: () => void;
+  onValueChange?: (value: boolean) => void;
 }

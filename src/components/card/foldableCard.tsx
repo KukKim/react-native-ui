@@ -15,9 +15,12 @@ const FoldableCard = ({
   type = 'primary',
   title,
   value,
-  onPress,
+  onValueChange,
 }: FoldableCardProps) => {
   const { theme } = useTheme();
+  const handlePress = () => {
+    onValueChange?.(!value);
+  };
   return (
     <View style={styles.container}>
       <AnimatedPressable
@@ -27,7 +30,7 @@ const FoldableCard = ({
             backgroundColor: theme.colors[type],
           },
         ]}
-        onPress={onPress}
+        onPress={handlePress}
         layout={LinearTransition.duration(200)}
       >
         <CommonText

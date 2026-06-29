@@ -95,9 +95,9 @@ export default function App() {
             <CommonText size={'s'}>Card Content</CommonText>
           </CommonCard>
           <FoldableCard
-            title={'FoldableCard'}
+            title={'Foldable Card'}
             value={cardOpen}
-            onPress={() => setCardOpen((prev) => !prev)}
+            onValueChange={() => setCardOpen(!cardOpen)}
           >
             <CommonText size={'s'}>Card Content</CommonText>
           </FoldableCard>
