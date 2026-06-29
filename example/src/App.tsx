@@ -24,6 +24,7 @@ import {
   CommonSelect,
   SelectItem,
   NumberBadge,
+  TextButton,
 } from '@kukkim/react-native-ui';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useState } from 'react';
@@ -61,7 +62,6 @@ export default function App() {
             <NumberBadge type="secondary" number={10} size={'m'} />
             <NumberBadge number={100} maxNumber={99} size={'l'} />
             <CommonText>Test text</CommonText>
-            <CommonButton title={'test button'} />
             <CommonIcon iconType="star_full" size="s" />
             <CommonRating
               value={ratingValue}
@@ -108,7 +108,12 @@ export default function App() {
             value={text}
             onChangeText={setText}
           />
-          <CommonButton
+          <TextButton title={'test button'} />
+          <SocialLoginButton provider="apple" />
+          <CommonButton>
+            <CommonIcon iconType="tune" />
+          </CommonButton>
+          <TextButton
             title={'Show Pop Over'}
             onPress={() => setVisible(!visible)}
           />
@@ -118,7 +123,6 @@ export default function App() {
             content={'This is pop over'}
           />
           <CommonSwitch value={switchValue} onChange={setSwitchValue} />
-          <SocialLoginButton provider="apple" />
           <CommonSpinner />
           <CommonSlider labels={[0, 5, 10]} />
         </ScrollViewContainer>

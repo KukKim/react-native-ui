@@ -19,15 +19,15 @@ export const fontSizeType: Record<SizeVariant, TextStyle> = {
   l: { fontSize: 20 },
 };
 
-export interface ButtonProps extends PressableProps {
+export interface CommonButtonProps extends PressableProps {
   type?: Variant;
   size?: SizeVariant;
 }
 
-export interface CommonButtonProps extends ButtonProps {
+export interface TextButtonProps extends CommonButtonProps {
   title?: string;
 }
 
-export interface SocialLoginButtonProps extends ButtonProps {
+export interface SocialLoginButtonProps extends CommonButtonProps {
   provider: 'apple' | 'facebook' | 'google' | 'kakaotalk' | 'naver';
 }

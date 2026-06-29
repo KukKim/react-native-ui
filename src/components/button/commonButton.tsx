@@ -1,13 +1,11 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { CommonText } from '../text';
-import { type CommonButtonProps, fontSizeType } from './types';
+import { type CommonButtonProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
 
 const CommonButton = ({
-  title,
   type = 'primary',
-  size = 'm',
   disabled,
+  children,
   ...props
 }: CommonButtonProps) => {
   const { theme } = useTheme();
@@ -21,12 +19,7 @@ const CommonButton = ({
       ]}
       {...props}
     >
-      <CommonText
-        style={[fontSizeType[size], { color: theme.colors.white }]}
-        isInner={true}
-      >
-        {title}
-      </CommonText>
+      {children}
     </Pressable>
   );
 };

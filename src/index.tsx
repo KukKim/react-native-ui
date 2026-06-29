@@ -25,5 +25,6 @@ export {
   NumberBadge,
   CommonList,
   ImageList,
+  TextButton,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';
