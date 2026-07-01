@@ -6,16 +6,18 @@ const CommonButton = ({
   type = 'primary',
   disabled,
   children,
+  style,
   ...props
 }: CommonButtonProps) => {
   const { theme } = useTheme();
   return (
     <Pressable
-      style={[
+      style={(state) => [
         styles.container,
         disabled
-          ? { backgroundColor: theme.colors[type] }
+          ? { backgroundColor: theme.colors.disabled }
           : { backgroundColor: theme.colors[type] },
+        typeof style === 'function' ? style(state) : style,
       ]}
       {...props}
     >

@@ -6,14 +6,14 @@ import CommonButton from './commonButton';
 
 const TextButton = ({
   title,
-  // type = 'primary',
+  type = 'primary',
   size = 'm',
   disabled,
   ...props
 }: TextButtonProps) => {
   const { theme } = useTheme();
   return (
-    <CommonButton disabled={disabled} {...props}>
+    <CommonButton type={type} disabled={disabled} {...props}>
       <CommonText
         style={[fontSizeType[size], { color: theme.colors.white }]}
         isInner={true}

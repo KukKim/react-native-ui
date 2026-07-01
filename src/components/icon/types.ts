@@ -28,6 +28,7 @@ export interface IconProps extends ViewProps {
     | 'bookmark'
     | 'calendar'
     | 'download'
+    | 'download2'
     | 'ellipsis'
     | 'heart'
     | 'house'
@@ -47,7 +48,11 @@ export interface IconProps extends ViewProps {
     | 'trash'
     | 'unplug'
     | 'user'
-    | 'tune';
+    | 'tune'
+    | 'sort'
+    | 'copy'
+    | 'rotateCw'
+    | 'squareArrowOutUpRight';
   type?: Variant;
   size?: SizeVariant;
   color?: string;

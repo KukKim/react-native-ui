@@ -14,10 +14,10 @@ import Google from './Google';
 import Kakaotalk from './Kakaotalk';
 import Naver from './Naver';
 import ChevronDown from './ChevronDown';
-// import { ArrowDownToLine } from './ArrowDownToLine';
-// import { ArrowDownWideNarrow } from './ArrowDownWideNarrow';
-// import { RotateCw } from './RotateCw';
-// export { SquareArrowOutUpRight } from './SquareArrowOutUpRight';
+import ArrowDownToLine from './ArrowDownToLine';
+import ArrowDownWideNarrow from './ArrowDownWideNarrow';
+import RotateCw from './RotateCw';
+import SquareArrowOutUpRight from './SquareArrowOutUpRight';
 import Bookmark from './Bookmark';
 import Calendar from './Calendar';
 import Download from './Download';
@@ -41,6 +41,7 @@ import Trash from './Trash2';
 import Unplug from './Unplug';
 import User from './User';
 import Tune from './Tune';
+import Copy from './Copy';
 
 const iconMap = {
   back: ArrowLeft,
@@ -79,6 +80,11 @@ const iconMap = {
   unplug: Unplug,
   user: User,
   tune: Tune,
+  download2: ArrowDownToLine,
+  sort: ArrowDownWideNarrow,
+  copy: Copy,
+  rotateCw: RotateCw,
+  squareArrowOutUpRight: SquareArrowOutUpRight,
 } as const;
 
 // TODO: 여기에 없는 아이콘을 추가해야할때에 대한 솔루션 필요? 필요한 아이콘이 생길때마다 새로 추가해야하나?
