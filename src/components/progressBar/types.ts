@@ -1,4 +1,4 @@
-import { type ViewProps } from 'react-native';
+import { type ViewProps, type ColorValue } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
 type SizeVariant = 's' | 'm' | 'l';
@@ -19,4 +19,6 @@ export interface ProgressBarProps extends ViewProps {
   type?: Variant;
   size?: SizeVariant;
   value: number;
+  progressColor?: ColorValue;
+  barColor?: ColorValue;
 }

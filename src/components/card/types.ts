@@ -8,6 +8,7 @@ export interface CardProps extends ViewProps {
 
 export interface CommonCardProps extends CardProps {
   title?: string;
+  titleStyle?: ViewStyle;
 }
 
 export interface FoldableCardProps extends CardProps {

@@ -3,7 +3,12 @@ import { CommonText } from '../text';
 import { type CommonCardProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
 
-const CommonCard = ({ children, type = 'primary', title }: CommonCardProps) => {
+const CommonCard = ({
+  children,
+  type = 'primary',
+  title,
+  titleStyle,
+}: CommonCardProps) => {
   const { theme } = useTheme();
   return (
     <View style={styles.container}>
@@ -22,6 +27,7 @@ const CommonCard = ({ children, type = 'primary', title }: CommonCardProps) => {
               {
                 color: theme.colors.white,
               },
+              titleStyle,
             ]}
           >
             {title}

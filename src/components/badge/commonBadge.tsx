@@ -12,12 +12,13 @@ const CommonBadge = ({
 }: CommonBadgeProps) => {
   const { theme } = useTheme();
   return (
-    <View style={[styles.wrapper, style]} {...props}>
+    <View style={[styles.wrapper]} {...props}>
       <View
         style={[
           styles.badge,
           sizeType[size],
           { backgroundColor: theme.colors[type] },
+          style,
         ]}
         {...props}
       >

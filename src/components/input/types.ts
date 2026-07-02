@@ -17,6 +17,7 @@ export interface InputProps extends TextInputProps {
   title?: string;
   type?: Variant;
   size?: SizeVariant;
+  titleStyle?: TextStyle;
   textStyle?: TextStyle;
   containerStyle?: ViewStyle;
   warningText?: string;

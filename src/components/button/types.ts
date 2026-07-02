@@ -2,6 +2,7 @@ import {
   type PressableProps,
   type TextStyle,
   type ViewStyle,
+  type ColorValue,
 } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
@@ -26,8 +27,10 @@ export interface CommonButtonProps extends PressableProps {
 
 export interface TextButtonProps extends CommonButtonProps {
   title?: string;
+  textStyle?: TextStyle;
 }
 
 export interface SocialLoginButtonProps extends CommonButtonProps {
   provider: 'apple' | 'facebook' | 'google' | 'kakaotalk' | 'naver';
+  textColor?: ColorValue;
 }

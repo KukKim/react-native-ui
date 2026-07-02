@@ -12,6 +12,7 @@ export default function CommonSwitch({
   value,
   onChange,
   disabled = false,
+  thumbColor,
   ...props
 }: SwitchProps) {
   const { theme } = useTheme();
@@ -60,7 +61,9 @@ export default function CommonSwitch({
             width: thumbSize,
             height: thumbSize,
             borderRadius: thumbSize / 2,
-            backgroundColor: value ? theme.colors[type] : theme.colors.disabled,
+            backgroundColor:
+              thumbColor ??
+              (value ? theme.colors[type] : theme.colors.disabled),
           },
           thumbAnimatedStyle,
         ]}

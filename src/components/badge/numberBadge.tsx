@@ -19,12 +19,13 @@ const NumberBadge = ({
   const { theme } = useTheme();
   const isExpanded = maxNumber !== undefined && number > maxNumber;
   return (
-    <View style={[styles.wrapper, style]} {...props}>
+    <View style={[styles.wrapper]} {...props}>
       <View
         style={[
           styles.badge,
           isExpanded ? expandedSizeType[size] : sizeType[size],
           { backgroundColor: theme.colors[type] },
+          style,
         ]}
       >
         <CommonText style={[fontSizeType[size], { color: theme.colors.white }]}>

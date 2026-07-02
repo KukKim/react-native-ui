@@ -1,4 +1,4 @@
-import { type ViewProps } from 'react-native';
+import { type ColorValue, type ViewProps } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
 type SizeVariant = 's' | 'm' | 'l';
@@ -6,4 +6,5 @@ type SizeVariant = 's' | 'm' | 'l';
 export interface SpinnerProps extends ViewProps {
   type?: Variant;
   size?: SizeVariant;
+  color?: ColorValue;
 }

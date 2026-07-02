@@ -11,7 +11,7 @@ import { CommonIcon } from '../icon';
 import { type SpinnerProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
 
-const CommonSpinner = ({ type = 'primary', ...props }: SpinnerProps) => {
+const CommonSpinner = ({ type = 'primary', color, ...props }: SpinnerProps) => {
   const { theme } = useTheme();
   const rotateValue = useSharedValue(0);
   const animatedStyles = useAnimatedStyle(() => ({
@@ -32,7 +32,10 @@ const CommonSpinner = ({ type = 'primary', ...props }: SpinnerProps) => {
   return (
     <View style={styles.container} {...props}>
       <Animated.View style={[animatedStyles]}>
-        <CommonIcon color={theme.colors[type]} iconType="loaderCircle" />
+        <CommonIcon
+          color={color ?? theme.colors[type]}
+          iconType="loaderCircle"
+        />
       </Animated.View>
     </View>
   );

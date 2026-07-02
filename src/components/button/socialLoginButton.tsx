@@ -5,20 +5,25 @@ import { type SocialLoginButtonProps } from './types';
 import { useTheme } from '../../hooks/useTheme';
 import CommonButton from './commonButton';
 
+// TODO: Icon의 컬러를 커스텀 가능하게 변경해야함.
 const SocialLoginButton = ({
   type = 'primary',
   provider,
   disabled,
   style,
+  textColor,
   ...props
 }: SocialLoginButtonProps) => {
   const { theme } = useTheme();
-
   return (
     <CommonButton type={type} disabled={disabled} style={style} {...props}>
       <View style={styles.flexDirectionRow}>
-        <CommonIcon iconType={provider} size={'m'} color={theme.colors.white} />
-        <CommonText style={{ color: theme.colors.white }}>
+        <CommonIcon
+          iconType={provider}
+          size={'m'}
+          color={textColor ?? theme.colors.white}
+        />
+        <CommonText style={{ color: textColor ?? theme.colors.white }}>
           {'Login with ' + provider}
         </CommonText>
       </View>

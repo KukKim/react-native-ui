@@ -6,16 +6,22 @@ import { useTheme } from '../../hooks/useTheme';
 const CommonInput = ({
   title,
   warningText,
+  containerStyle,
+  titleStyle,
+  textStyle,
   type = 'primary',
   ...props
 }: InputProps) => {
   const { theme } = useTheme();
   return (
-    <View style={styles.container}>
-      {title && <CommonText style={styles.title}>{title}</CommonText>}
+    <View style={[styles.container, containerStyle]}>
+      {title && (
+        <CommonText style={[styles.title, titleStyle]}>{title}</CommonText>
+      )}
       <TextInput
         style={[
           styles.textInput,
+          textStyle,
           {
             backgroundColor: theme.colors.background,
             borderColor: warningText

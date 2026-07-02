@@ -9,13 +9,15 @@ const TextButton = ({
   type = 'primary',
   size = 'm',
   disabled,
+  style,
+  textStyle,
   ...props
 }: TextButtonProps) => {
   const { theme } = useTheme();
   return (
-    <CommonButton type={type} disabled={disabled} {...props}>
+    <CommonButton type={type} disabled={disabled} style={style} {...props}>
       <CommonText
-        style={[fontSizeType[size], { color: theme.colors.white }]}
+        style={[fontSizeType[size], { color: theme.colors.white }, textStyle]}
         isInner={true}
       >
         {title}

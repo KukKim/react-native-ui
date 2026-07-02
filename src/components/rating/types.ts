@@ -1,3 +1,5 @@
+import { type ColorValue } from 'react-native';
+
 type Variant = 'primary' | 'secondary';
 type SizeVariant = 's' | 'm' | 'l';
 
@@ -14,4 +16,5 @@ export interface RatingProps {
   editable?: boolean;
   size?: SizeVariant;
   maxRating?: number;
+  color?: ColorValue;
 }

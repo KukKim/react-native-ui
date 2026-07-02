@@ -10,11 +10,12 @@ export const CommonRating = ({
   editable = false,
   size = 'm',
   maxRating = 5,
+  color,
 }: RatingProps) => {
   const { theme } = useTheme();
+
   const renderStar = (index: number) => {
     const starNumber = index + 1;
-
     let iconType: 'star_empty' | 'star_half' | 'star_full' = 'star_empty';
 
     if (value >= starNumber) {
@@ -29,7 +30,7 @@ export const CommonRating = ({
           <CommonIcon
             iconType={iconType}
             size={size}
-            color={theme.colors[type]}
+            color={color ?? theme.colors[type]}
           />
         </View>
       );
@@ -49,7 +50,7 @@ export const CommonRating = ({
         <CommonIcon
           iconType={iconType}
           size={size}
-          color={theme.colors[type]}
+          color={color ?? theme.colors[type]}
         />
 
         {/* 왼쪽 절반 */}

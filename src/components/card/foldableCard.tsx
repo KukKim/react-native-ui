@@ -14,6 +14,7 @@ const FoldableCard = ({
   children,
   type = 'primary',
   title,
+  titleStyle,
   value,
   onValueChange,
 }: FoldableCardProps) => {
@@ -39,6 +40,7 @@ const FoldableCard = ({
             {
               color: theme.colors.white,
             },
+            titleStyle,
           ]}
         >
           {title}

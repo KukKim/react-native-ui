@@ -1,4 +1,4 @@
-import { type ViewProps } from 'react-native';
+import { type ColorValue, type ViewProps } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
 type SizeVariant = 's' | 'm' | 'l';
@@ -55,5 +55,5 @@ export interface IconProps extends ViewProps {
     | 'squareArrowOutUpRight';
   type?: Variant;
   size?: SizeVariant;
-  color?: string;
+  color?: ColorValue;
 }

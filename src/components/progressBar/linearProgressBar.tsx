@@ -11,6 +11,8 @@ const LinearProgressBar = ({
   type = 'primary',
   value,
   style,
+  progressColor,
+  barColor,
   ...props
 }: ProgressBarProps) => {
   const { theme } = useTheme();
@@ -33,7 +35,7 @@ const LinearProgressBar = ({
       style={[
         styles.container,
         {
-          backgroundColor: theme.colors.disabled,
+          backgroundColor: barColor ?? theme.colors.disabled,
         },
         style,
       ]}
@@ -46,7 +48,7 @@ const LinearProgressBar = ({
             styles.progress,
             {
               width: containerWidth,
-              backgroundColor: theme.colors[type],
+              backgroundColor: progressColor ?? theme.colors[type],
             },
             animatedStyle,
           ]}

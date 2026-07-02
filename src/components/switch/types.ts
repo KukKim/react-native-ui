@@ -1,4 +1,4 @@
-import { type PressableProps } from 'react-native';
+import { type ColorValue, type PressableProps } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
 type SizeVariant = 's' | 'm' | 'l';
@@ -14,4 +14,5 @@ export interface SwitchProps extends PressableProps {
   size?: SizeVariant;
   value: boolean;
   onChange?: (value: boolean) => void;
+  thumbColor?: ColorValue;
 }
