@@ -28,3 +28,4 @@ export {
   TextButton,
 } from './components';
 export { ThemeProvider } from './theme/themeProvider';
+export { useTheme } from './hooks/useTheme';

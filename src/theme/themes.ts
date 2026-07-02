@@ -11,6 +11,7 @@ export interface ThemeColors {
   text: string;
 
   white: string;
+  black: string;
   primary: string;
   secondary: string;
   warning: string;
@@ -38,6 +39,7 @@ export const lightTheme: AppTheme = {
     text: palette.gray900,
 
     white: '#FFFFFF',
+    black: '#000000',
     primary: palette.blue500,
     secondary: '#8E8E93',
     warning: palette.yellow500,
@@ -58,6 +60,7 @@ export const darkTheme: AppTheme = {
     text: '#FFFFFF',
 
     white: '#FFFFFF',
+    black: '#000000',
     primary: palette.blue500,
     secondary: '#AEAEB2',
     warning: palette.yellow500,

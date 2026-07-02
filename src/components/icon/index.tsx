@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { type IconProps, sizeType } from './types';
-// import { useTheme } from '../../hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 import ArrowLeft from './ArrowLeft';
 import StarEmpty from './StarEmpty';
 import StarHalf from './StarHalf';
@@ -91,10 +91,10 @@ const iconMap = {
 export const CommonIcon = ({
   iconType,
   size = 'm',
-  color = 'black',
+  color,
   ...props
 }: IconProps) => {
-  // const { theme } = useTheme();
+  const { theme } = useTheme();
 
   const IconComponent = iconMap[iconType];
   if (!IconComponent) {
@@ -106,7 +106,7 @@ export const CommonIcon = ({
       <IconComponent
         width={sizeType[size]}
         height={sizeType[size]}
-        color={color}
+        color={color ?? theme.colors.text}
       />
     </View>
   );

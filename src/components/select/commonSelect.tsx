@@ -10,6 +10,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
+//TODO: 색상에 대한 고민이 필요한듯, 너무 못생김
 export const SelectItem = (_props: CommonSelectItemProps) => {
   return null;
 };
@@ -63,7 +64,7 @@ export const CommonSelect = ({
           styles.trigger,
           {
             borderColor: theme.colors.border,
-            backgroundColor: theme.colors.background,
+            backgroundColor: theme.colors.white,
           },
         ]}
         onPress={() => {
@@ -78,7 +79,10 @@ export const CommonSelect = ({
       >
         <CommonText
           size="m"
-          style={[!selectedItem && { color: theme.colors.disabled }]}
+          style={[
+            { color: theme.colors.black },
+            !selectedItem && { color: theme.colors.disabled },
+          ]}
         >
           {selectedItem?.props.label ?? placeholder}
         </CommonText>
@@ -103,12 +107,16 @@ export const CommonSelect = ({
             return (
               <Pressable
                 key={String(item.props.value)}
-                style={[styles.option, isSelected && styles.selectedOption]}
+                style={[
+                  { backgroundColor: theme.colors.white },
+                  styles.option,
+                  isSelected && styles.selectedOption,
+                ]}
                 onPress={() => handleSelect(item.props.value)}
               >
                 <CommonText
                   style={[
-                    styles.optionText,
+                    { color: theme.colors.black },
                     isSelected && styles.selectedOptionText,
                   ]}
                 >
@@ -159,10 +167,6 @@ const styles = StyleSheet.create({
   },
   selectedOption: {
     backgroundColor: '#F2F4F7',
-  },
-  optionText: {
-    fontSize: 14,
-    color: '#101828',
   },
   selectedOptionText: {
     fontWeight: '600',
