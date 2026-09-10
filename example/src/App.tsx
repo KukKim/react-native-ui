@@ -78,7 +78,7 @@ const TestComponent = () => {
           editable={true}
           onChange={setRatingValue}
         />
-        <CommonAvatar title="DK" size="s" />
+        <CommonAvatar title="DK" size="xl" />
         <CommonAvatar
           source={{
             uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -131,6 +131,18 @@ const TestComponent = () => {
       <CommonSwitch value={switchValue} onChange={setSwitchValue} />
       <CommonSpinner />
       <CommonSlider labels={[0, 5, 10]} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+        }}
+      >
+        <CommonAvatar size="l" source={{}} />
+        <View style={{ flex: 1 }}>
+          <CommonInput />
+          <TextButton title={'Asfadsf'} />
+        </View>
+      </View>
     </ScrollViewContainer>
   );
 };

@@ -7,24 +7,30 @@ import {
 } from 'react-native';
 
 type Variant = 'primary' | 'secondary';
-type SizeVariant = 's' | 'm' | 'l';
+type SizeVariant = 'xs' | 's' | 'm' | 'l' | 'xl';
 
 export const sizeType: Record<SizeVariant, ViewStyle> = {
-  s: { width: 16, height: 16, borderRadius: 8 },
-  m: { width: 20, height: 20, borderRadius: 10 },
-  l: { width: 24, height: 24, borderRadius: 12 },
+  xs: { width: 24, height: 24, borderRadius: 12 },
+  s: { width: 36, height: 36, borderRadius: 18 },
+  m: { width: 48, height: 48, borderRadius: 24 },
+  l: { width: 60, height: 60, borderRadius: 30 },
+  xl: { width: 72, height: 72, borderRadius: 36 },
 };
 // TODO: sizeType과 동일한 코드인데 type때문에 코드 중복이 발생함 수정필요.
 export const imageSizeType: Record<SizeVariant, ImageStyle> = {
-  s: { width: 16, height: 16, borderRadius: 8 },
-  m: { width: 20, height: 20, borderRadius: 10 },
-  l: { width: 24, height: 24, borderRadius: 12 },
+  xs: { width: 24, height: 24, borderRadius: 12 },
+  s: { width: 36, height: 36, borderRadius: 18 },
+  m: { width: 48, height: 48, borderRadius: 24 },
+  l: { width: 60, height: 60, borderRadius: 30 },
+  xl: { width: 72, height: 72, borderRadius: 36 },
 };
 
 export const fontSizeType: Record<SizeVariant, TextStyle> = {
-  s: { fontSize: 10 },
-  m: { fontSize: 12 },
-  l: { fontSize: 14 },
+  xs: { fontSize: 12 },
+  s: { fontSize: 18 },
+  m: { fontSize: 24 },
+  l: { fontSize: 30 },
+  xl: { fontSize: 36 },
 };
 
 export interface AvatarProps extends ViewProps {
